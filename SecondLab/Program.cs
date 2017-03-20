@@ -19,24 +19,24 @@ namespace SecondLab
                 answer = Convert.ToChar(Console.ReadLine());
 
 
-                Game game;
+                Game2 game;
 
                 if (answer == 'y' || answer == 'Y' || answer == 'Н' || answer == 'н')
                 {
                     StreamReader file = new StreamReader(@"C:\Users\User\Desktop\laba\text.txt"); 
-                    game = new Game(txt_file.reader(file));
+                    game = new Game2(txt_file.reader(file));
                 }
-                else game = new Game(1, 2, 3, 4, 5, 6, 7, 0, 8);
+                else game = new Game2(1, 2, 3, 4, 5, 6, 7, 0, 8);
 
-
+                
 
                 Printer.Print(game);
 
-
+              
                 
                 //  Console.WriteLine(game[0,1]);
 
-                while (!game.End_of_the_game())
+                while (!game.End_of_the_game)
                 {
 
                     Console.WriteLine("Enter the value you want to move");
