@@ -17,7 +17,7 @@ namespace SecondLab
                     Console.Write(game.Field[x, y] + " ");
                 }
                 Console.WriteLine();
-            }
+            } 
 
 
         }
