@@ -6,37 +6,39 @@ using System.Threading.Tasks;
 
 namespace SecondLab
 {
-   class Game2 : Game
+    class Game2 : Game
     {
         public Game2(params int[] field) : base(field) // используем конструктор для создания поля в базовом классе
         {
-        Randomize();
+           // Randomize();
         }
 
         public void Randomize()
         {
-            List<int> rand_list = new List<int>();
+           List<int> rand_list = new List<int>();
             Random random = new Random();
-          
-            
+
+
             int[] values_in_random = new int[Field.Length];
-         
+
             for (int i = 0; i < Field.Length; i++)
             {
                 while (rand_list.Contains(values_in_random[i]))
                 {
                     values_in_random[i] = random.Next(1, Field.Length);
-                   
+
                 }
-               
-                rand_list.Add(values_in_random[i]); 
+
+                rand_list.Add(values_in_random[i]);
             }
 
             base.Filling(values_in_random);
 
-        }
+        
 
+       
 
+}
         public bool End_of_the_game
         {
             get

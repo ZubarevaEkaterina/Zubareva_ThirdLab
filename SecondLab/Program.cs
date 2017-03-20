@@ -18,14 +18,14 @@ namespace SecondLab
                 answer = Convert.ToChar(Console.ReadLine());
 
 
-                Game2 game;
+                Game3 game;
 
                 if (answer == 'y' || answer == 'Y' || answer == 'Н' || answer == 'н')
                 {
                     StreamReader file = new StreamReader(@"C:\Users\User\Desktop\laba\text.txt"); 
-                    game = new Game2(txt_file.reader(file));
+                    game = new Game3(txt_file.reader(file));
                 }
-                else game = new Game2(1, 2, 3, 4, 5, 6, 7, 0, 8);
+                else game = new Game3(1, 2, 3, 4, 5, 6, 7, 0, 8);
     
 
                 Printer.Print(game);
@@ -42,10 +42,10 @@ namespace SecondLab
                     int value = 0;
 
                     value = Convert.ToInt32(Console.ReadLine());
+               
+                //      Console.WriteLine("Координаты выбранного элемента до перестановки: {0},{1}", game.GetLocation(value).x, game.GetLocation(value).y);
 
-              //      Console.WriteLine("Координаты выбранного элемента до перестановки: {0},{1}", game.GetLocation(value).x, game.GetLocation(value).y);
-
-                    if (value <= 0 || value >= game.Field.Length)
+                if (value <= 0 || value >= game.Field.Length)
                     {
                         Console.WriteLine("Error: this value doesn't exist");
                         goto start;
@@ -57,7 +57,14 @@ namespace SecondLab
                         Console.WriteLine("Error: Change your value, because you can't move it");
                         goto start;
                     }
-                    Printer.Print(game);
+
+                for (int i = 0; i < game.History.Count; i++)
+                {
+                    Console.WriteLine(game.History[i]);
+
+                }
+
+                Printer.Print(game);
                  //   Console.WriteLine("Координаты выбранного элемента после перестановки: {0},{1}", game.GetLocation(value).x, game.GetLocation(value).y);
 
                 }

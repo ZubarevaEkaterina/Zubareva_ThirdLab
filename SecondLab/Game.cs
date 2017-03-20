@@ -91,7 +91,7 @@ namespace SecondLab
         }
 
 
-        public bool Shift(int value)
+        public virtual bool Shift(int value)
         {
 
 
