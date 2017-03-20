@@ -11,10 +11,10 @@ namespace SecondLab
         public readonly int x, y;
 
 
-        public Locations(int a, int b)
+        public Locations(int X, int Y)
         {
-            x = a;
-            y = b;
+            x = X;
+            y = Y;
         }
     }
 }

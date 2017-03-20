@@ -10,11 +10,12 @@ namespace SecondLab
     class Game
     {
 
-        public readonly int[,] Field;
-        private Locations[] location;
+       public readonly int[,] Field;
+        public readonly Locations[] location;
 
         public Game(params int[] field)
         {
+            
             {
                 Check(field);
 
@@ -22,22 +23,28 @@ namespace SecondLab
 
                 location = new Locations[field.Length];
 
-                int index = 0;
-                for (int x = 0; x < Field.GetLength(0); x++)
-                {
-                    for (int y = 0; y < Field.GetLength(1); y++)
-                    {
-                        if (index != field.Length)
-                        {
-                            Field[x, y] = field[index];
-                            location[field[index]] = new Locations(x, y);
-                            index++;
-                        }
-                    }
-                }
+                Filling(field);
 
 
             }
+        }
+
+        public void Filling(int[] field)
+        {
+            int index = 0;
+            for (int x = 0; x < Field.GetLength(0); x++)
+            {
+                for (int y = 0; y < Field.GetLength(1); y++)
+                {
+                    if (index != field.Length)
+                    {
+                        Field[x, y] = field[index];
+                        location[field[index]] = new Locations(x, y);
+                        index++;
+                    }
+                }
+            }
+
         }
 
         public void Check(int[] field)
@@ -78,8 +85,9 @@ namespace SecondLab
             get
             {
                 return Field[x, y];
-            }
-
+            
+             }
+            
         }
 
 

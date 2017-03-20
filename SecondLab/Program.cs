@@ -11,8 +11,7 @@ namespace SecondLab
     {
         static void Main(string[] args)
         {
-            try
-            {
+            
 
                 Console.WriteLine("Do you want to take values for field from a file? \nYes - Y , no - press any other key");
                 char answer;
@@ -27,8 +26,7 @@ namespace SecondLab
                     game = new Game2(txt_file.reader(file));
                 }
                 else game = new Game2(1, 2, 3, 4, 5, 6, 7, 0, 8);
-
-                
+    
 
                 Printer.Print(game);
 
@@ -64,14 +62,10 @@ namespace SecondLab
 
                 }
                     Console.WriteLine("Game over. You win!");
-                }
+                
             
             
-            catch (Exception)
-            {
-                Console.WriteLine("Game doesn't exist");
-
-            }
+         
 
         
 
