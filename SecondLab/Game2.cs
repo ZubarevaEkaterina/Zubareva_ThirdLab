@@ -26,14 +26,14 @@ namespace SecondLab
                 while (rand_list.Contains(values_in_random[i]))
                 {
                     values_in_random[i] = random.Next(1, Field.Length);
-                    
+                   
                 }
                
-                rand_list.Add(values_in_random[i]);
+                rand_list.Add(values_in_random[i]); 
             }
-         
 
             base.Filling(values_in_random);
+
         }
 
 
