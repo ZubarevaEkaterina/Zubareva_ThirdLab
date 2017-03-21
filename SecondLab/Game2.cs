@@ -10,7 +10,7 @@ namespace SecondLab
     {
         public Game2(params int[] field) : base(field) // используем конструктор для создания поля в базовом классе
         {
-           // Randomize();
+           Randomize();
         }
 
         public void Randomize()
@@ -25,7 +25,7 @@ namespace SecondLab
             {
                 while (rand_list.Contains(values_in_random[i]))
                 {
-                    values_in_random[i] = random.Next(1, Field.Length);
+                    values_in_random[i] = random.Next(0, Field.Length);
 
                 }
 
@@ -34,9 +34,6 @@ namespace SecondLab
 
             base.Filling(values_in_random);
 
-        
-
-       
 
 }
         public bool End_of_the_game

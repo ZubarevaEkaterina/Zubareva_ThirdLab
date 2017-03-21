@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 namespace SecondLab
 {
     class Game3 : Game2
-
-       
     {
         public readonly List<int> History;
         public Game3(params int[] values) : base(values)
@@ -29,6 +27,18 @@ namespace SecondLab
 
         }      
 
+
+        public void undo ()
+        {
+            int value = 0;
+            value = History[History.Count - 1];
+            base.Shift(value);
+            History.RemoveAt(History.Count - 1);
+
+            
+           
+        
+        }
    
         }
     }

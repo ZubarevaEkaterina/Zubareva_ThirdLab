@@ -58,15 +58,40 @@ namespace SecondLab
                         goto start;
                     }
 
+                    Console.WriteLine("История ходов");
+
                 for (int i = 0; i < game.History.Count; i++)
                 {
-                    Console.WriteLine(game.History[i]);
+                    Console.Write(game.History[i] + ";");
 
                 }
+                Console.WriteLine();
 
                 Printer.Print(game);
                  //   Console.WriteLine("Координаты выбранного элемента после перестановки: {0},{1}", game.GetLocation(value).x, game.GetLocation(value).y);
 
+
+                Console.WriteLine("Возможно вы хотите сделать шаг назад ?");
+
+                char question;
+                question = Convert.ToChar(Console.ReadLine());
+
+
+                if (question == 'y' || question == 'Y' || question == 'Н' || question == 'н')
+                {
+                    game.undo();
+                }
+
+                Console.WriteLine("История ходов");
+
+                for (int i = 0; i < game.History.Count; i++)
+                {
+                    Console.Write(game.History[i] + ";");
+
+                }
+                Console.WriteLine();
+
+                Printer.Print(game);
                 }
                     Console.WriteLine("Game over. You win!");
                 
