@@ -8,7 +8,7 @@ namespace SecondLab
 {
     class Game3 : Game2
     {
-        public readonly List<int> History;
+        public readonly List<int> History;
         public Game3(params int[] values) : base(values)
         {
             History = new List<int>();
