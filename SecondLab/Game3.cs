@@ -31,12 +31,10 @@ namespace SecondLab
         public void undo ()
         {
             int value = 0;
-            value = History[History.Count - 1];
+            value = History.Last();
             base.Shift(value);
-            History.RemoveAt(History.Count - 1);
-
-            
-           
+            History.RemoveAt(History.LastIndexOf(value));
+  
         
         }
    
