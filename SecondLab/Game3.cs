@@ -9,6 +9,7 @@ namespace SecondLab
     class Game3 : Game2
     {
         public readonly List<int> History;
+
         public Game3(params int[] values) : base(values)
         {
             History = new List<int>();
@@ -17,6 +18,7 @@ namespace SecondLab
         public override bool Shift(int value)
         {
             bool if_shift = base.Shift(value);
+
             if (if_shift)
             {
                 History.Add(value);
@@ -25,18 +27,18 @@ namespace SecondLab
 
             return if_shift;
 
-        }      
+        }
 
 
-        public void undo ()
+        public void undo()
         {
             int value = 0;
             value = History.Last();
             base.Shift(value);
             History.RemoveAt(History.LastIndexOf(value));
-  
-        
+
+
         }
-   
-        }
+
     }
+}
