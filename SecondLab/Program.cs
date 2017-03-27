@@ -69,6 +69,60 @@ namespace SecondLab
 
             }
 
+            if (version_of_the_game == 2)
+            {
+                Console.WriteLine("Do you want to take values for field from a file? \nYes - enter , no - press any other key");
+
+                ConsoleKeyInfo answer = Console.ReadKey();
+
+                Game2 game;
+                if (answer.Key == ConsoleKey.Enter)
+                {
+                    StreamReader file = new StreamReader(@"C:\Users\User\Desktop\laba\text.txt");
+                    game = new Game2(txt_file.reader(file));
+                }
+
+
+                else game = new Game2(1, 2, 3, 4, 5, 6, 7, 0, 8);
+
+
+                Printer.Print(game);
+
+
+                while (!game.End_of_the_game)
+                {
+
+                    Console.WriteLine("Enter the value you want to move");
+                    start:
+                    int value = 0;
+
+                    value = Convert.ToInt32(Console.ReadLine());
+
+                    if (value <= 0 || value >= game.Field.Length)
+                    {
+                        Console.WriteLine("Error: this value doesn't exist");
+                        goto start;
+                    }
+
+
+                    if (game.Shift(value) == false)
+                    {
+                        Console.WriteLine("Error: Change your value, because you can't move it");
+                        goto start;
+                    }
+
+                  
+                    Console.WriteLine();
+
+                    Printer.Print(game);
+
+                }
+                Console.WriteLine("Game over. You win!");
+
+
+
+
+            }
 
             if (version_of_the_game == 3)
             {
@@ -86,7 +140,7 @@ namespace SecondLab
 
                 else game = new Game3(1, 2, 3, 4, 5, 6, 7, 0, 8);
 
-
+                Console.WriteLine();
                 Printer.Print(game);
 
 
